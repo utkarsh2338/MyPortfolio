@@ -25,14 +25,14 @@ const Navbar = () => {
           <FaGithub className="text-white text-xl" />
         </a>
         <a
-          href="https://x.com/kevinrush"
+          href="https://x.com/UtkarshShu72261"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaSquareXTwitter className="text-white text-xl" />
         </a>
         <a
-          href="https://www.instagram.com/utkarsh1007_shukla/"
+          href="https://www.instagram.com/utkar_.sh7/"
           target="_blank"
           rel="noopener noreferrer"
         >
