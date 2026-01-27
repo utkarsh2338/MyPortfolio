@@ -1,5 +1,5 @@
 import { HERO_CONTENT, HERO_HIGHLIGHTS } from "../constants";
-import profilePic from "../assets/My_Image.jpg"
+import profilePic from "../assets/my_image.jpeg"
 import { motion } from "framer-motion"
 import { FaDownload, FaEnvelope } from "react-icons/fa";
 
