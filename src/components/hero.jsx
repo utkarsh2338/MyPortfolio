@@ -70,7 +70,7 @@ const Hero = () => {
               animate="visible"
               className="flex flex-wrap gap-4 mt-6">
               <a
-                href="/My_Resume_Updated.pdf"
+                href="/updated_resume_27Jan.pdf"
                 download
                 className="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all"
                 aria-label="Download Resume">
