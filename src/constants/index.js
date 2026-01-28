@@ -65,9 +65,9 @@ export const PROJECTS = [
     description:
       "Project management application with real-time updates, task assignment, progress tracking, deadline reminders, and team collaboration features using WebSocket technology.",
     contribution: "Built real-time sync with Socket.io, created drag-and-drop Kanban board, implemented role-based access control.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Redux"],
+    technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Redux"],
     liveDemo: "#",
-    github: "https://github.com/utkarsh2338",
+    github: "https://github.com/utkarsh2338/collab-platform",
   },
   {
     title: "Developer Portfolio with CMS",
