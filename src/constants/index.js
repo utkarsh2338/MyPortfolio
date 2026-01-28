@@ -1,4 +1,4 @@
-import project1 from "../assets/projects/project-1.jpg";
+import project1 from "../assets/projects/project-1.png";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
@@ -48,15 +48,15 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Platform with Admin Dashboard",
+    title: "NexMeet - Video Conferencing Platform",
     image: project1,
-    problem: "Small businesses need affordable online stores with inventory management.",
+    problem: "A video conferencing solution to facilitate remote communication and collaboration.",
     description:
-      "Full-stack e-commerce solution featuring product catalog, shopping cart, secure payment integration, user authentication, and admin panel for inventory and order management.",
-    contribution: "Architected backend REST APIs, implemented JWT authentication, designed responsive UI with React, integrated Stripe payments.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
-    liveDemo: "#",
-    github: "https://github.com/utkarsh2338",
+      "NexMeet is a scalable video conferencing web application enabling high-quality video calls, screen sharing, chat, and meeting scheduling. Built with WebRTC for real-time communication and a Node.js backend for session management.",
+    contribution: "Developed frontend with React, implemented WebRTC integration, designed RESTful APIs for user management and meeting scheduling.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Clerk", "WebRTC"],
+    liveDemo: "https://nex-meet-ten.vercel.app/",
+    github: "https://github.com/utkarsh2338/NexMeet",
   },
   {
     title: "Real-Time Collaborative Task Manager",
