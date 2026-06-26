@@ -39,7 +39,7 @@ const Experience = () => {
                 <span className="h-2 w-2 rounded-full bg-white" />
               </span>
 
-              <div className="rounded-2xl glass p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+              <div className="rounded-2xl glass p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 sm:p-6">
                 <span className="inline-block rounded-full bg-cyan-500/10 px-3 py-1 font-mono text-xs font-medium text-cyan-600 dark:text-cyan-400">
                   {exp.year}
                 </span>

@@ -79,7 +79,7 @@ const Technologies = () => {
 
       <MarqueeRow />
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
         {Object.entries(TECH_STACK).map(([cat, items], idx) => {
           const Cat = CAT_ICON[cat] || FaCode;
           return (

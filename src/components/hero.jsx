@@ -15,8 +15,8 @@ const ROLES = [
 
 const STATS = [
   { value: 1872, label: "LeetCode Rating", suffix: "" },
-  { value: 1000, label: "DSA Problems", suffix: "+" },
-  { value: 8.5, label: "CGPA", suffix: "+", decimals: 1 },
+  { value: 1500, label: "DSA Problems", suffix: "+" },
+  { value: 8.5, label: "CGPA", decimals: 1 },
   { value: 4, label: "Major Projects", suffix: "+" },
 ];
 
@@ -74,8 +74,8 @@ const Hero = () => {
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center pt-28 pb-16">
-      <div className="grid w-full items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+    <section id="hero" className="relative flex min-h-screen flex-col justify-center pt-28 pb-8 sm:pb-16">
+      <div className="grid w-full items-center gap-10 sm:gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         {/* Left */}
         <div>
           <motion.div
@@ -104,7 +104,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-zinc-900 dark:text-white sm:text-6xl lg:text-7xl"
+            className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Utkarsh
             <br />
@@ -115,7 +115,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 text-2xl font-medium tracking-tight text-zinc-700 dark:text-zinc-200 sm:text-3xl"
+            className="mt-4 text-xl font-medium tracking-tight text-zinc-700 dark:text-zinc-200 sm:text-2xl md:text-3xl"
           >
             <RotatingRole />
           </motion.h2>
@@ -179,7 +179,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -left-4 top-10 rounded-2xl glass-strong px-4 py-2 shadow-lg sm:-left-8"
+            className="absolute -left-2 top-10 rounded-2xl glass-strong px-3 py-1.5 shadow-lg sm:-left-8 sm:px-4 sm:py-2"
           >
             <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400">LeetCode</p>
             <p className="font-display text-lg font-bold text-zinc-900 dark:text-white">1872</p>
@@ -187,7 +187,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -right-3 bottom-12 rounded-2xl glass-strong px-4 py-2 shadow-lg sm:-right-6"
+            className="absolute -right-1 bottom-12 rounded-2xl glass-strong px-3 py-1.5 shadow-lg sm:-right-6 sm:px-4 sm:py-2"
           >
             <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Codeforces</p>
             <p className="font-display text-lg font-bold accent-text">Pupil</p>
@@ -208,15 +208,15 @@ const Hero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="absolute inset-x-0 bottom-2 hidden lg:block"
+        className="mt-10 sm:mt-14 lg:mt-16"
       >
-        <div className="grid grid-cols-4 gap-4 rounded-2xl glass px-6 py-5">
+        <div className="grid grid-cols-2 gap-3 rounded-2xl glass px-4 py-4 sm:grid-cols-4 sm:gap-4 sm:px-6 sm:py-5">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-display text-3xl font-bold text-zinc-900 dark:text-white">
+              <p className="font-display text-2xl font-bold text-zinc-900 dark:text-white sm:text-3xl">
                 <Counter value={s.value} suffix={s.suffix} decimals={s.decimals || 0} />
               </p>
-              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              <p className="mt-1 text-[10px] font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400 sm:text-xs">
                 {s.label}
               </p>
             </div>

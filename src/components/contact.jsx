@@ -23,7 +23,7 @@ const Contact = () => {
         <SectionHeading eyebrow="// contact" title="Let's build something" />
       </motion.div>
 
-      <div className="relative overflow-hidden rounded-[2rem] glass-strong p-8 sm:p-12">
+      <div className="relative overflow-hidden rounded-2xl glass-strong p-6 sm:rounded-[2rem] sm:p-8 md:p-12">
         {/* glow accent */}
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-indigo-400/20 blur-3xl" />
@@ -31,7 +31,7 @@ const Contact = () => {
         <div className="relative grid gap-10 lg:grid-cols-2">
           {/* Left copy */}
           <div>
-            <h3 className="font-display text-3xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-4xl">
+            <h3 className="font-display text-2xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-3xl md:text-4xl">
               Currently open to <span className="accent-text">internships</span> & exciting projects
             </h3>
             <p className="mt-4 max-w-md text-zinc-600 dark:text-zinc-400">
@@ -65,26 +65,26 @@ const Contact = () => {
           <div className="flex flex-col justify-center gap-4">
             <a
               href={`mailto:${CONTACT.email}`}
-              className="group flex items-center gap-4 rounded-2xl glass p-5 transition-all hover:border-cyan-400/40"
+              className="group flex items-center gap-3 overflow-hidden rounded-2xl glass p-4 transition-all hover:border-cyan-400/40 sm:gap-4 sm:p-5"
             >
-              <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br from-cyan-500/15 to-indigo-500/15 text-xl text-cyan-600 dark:text-cyan-400">
+              <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br from-cyan-500/15 to-indigo-500/15 text-lg text-cyan-600 dark:text-cyan-400 sm:h-12 sm:w-12 sm:text-xl">
                 <FaEnvelope />
               </span>
-              <div className="min-w-0">
-                <p className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Email</p>
-                <p className="truncate font-medium text-zinc-900 group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
+              <div className="min-w-0 flex-1">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400 sm:text-xs">Email</p>
+                <p className="truncate text-sm font-medium text-zinc-900 group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400 sm:text-base">
                   {CONTACT.email}
                 </p>
               </div>
             </a>
 
-            <div className="flex items-center gap-4 rounded-2xl glass p-5">
-              <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br from-cyan-500/15 to-indigo-500/15 text-xl text-cyan-600 dark:text-cyan-400">
+            <div className="flex items-center gap-3 rounded-2xl glass p-4 sm:gap-4 sm:p-5">
+              <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br from-cyan-500/15 to-indigo-500/15 text-lg text-cyan-600 dark:text-cyan-400 sm:h-12 sm:w-12 sm:text-xl">
                 <FaMapMarkerAlt />
               </span>
-              <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Location</p>
-                <p className="font-medium text-zinc-900 dark:text-white">{CONTACT.address}</p>
+              <div className="min-w-0">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400 sm:text-xs">Location</p>
+                <p className="text-sm font-medium text-zinc-900 dark:text-white sm:text-base">{CONTACT.address}</p>
               </div>
             </div>
 
