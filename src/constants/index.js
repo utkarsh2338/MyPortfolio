@@ -1,7 +1,7 @@
 import project1 from "../assets/projects/project-1.png";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project4 from "../assets/projects/project-4.png";
 
 export const HERO_CONTENT = `Final year CSE student at IIIT Trichy specializing in full-stack development and competitive programming. Proficient in MERN stack with strong problem-solving skills — LeetCode rating 1872, Codeforces Pupil, solved 1500+ DSA problems.`;
 
@@ -90,15 +90,15 @@ export const PROJECTS = [
     github: "https://github.com/utkarsh2338",
   },
   {
-    title: "Blogging Platform with Markdown Editor",
+    title: "NexFlow - Real-Time Kanban Board",
     image: project4,
-    problem: "Content creators need a simple platform for writing and sharing technical blogs.",
+    problem: "Teams need a lightweight, ultra-responsive tool to collaborate and organize tasks visually without high latency or complex configurations.",
     description:
-      "Medium-style blogging platform with rich markdown editor, syntax highlighting for code, commenting system, user profiles, and social features.",
-    contribution: "Developed markdown editor with live preview, implemented commenting system, created RESTful API with authentication.",
-    technologies: ["React", "Node.js", "Express", "PostgreSQL", "JWT"],
-    liveDemo: "#",
-    github: "https://github.com/utkarsh2338",
+      "NexFlow is a real-time collaborative task management board featuring drag-and-drop workflow organization, instant multi-client synchronization, and a custom animated triangle particle background. The stack leverages a Node.js and Socket.io server to broadcast changes instantly, with a responsive Next.js frontend built in TypeScript and styled with Tailwind CSS.",
+    contribution: "Architected the real-time event synchronization protocol with Socket.io, integrated @hello-pangea/dnd for smooth, fluid task reordering across To Do, In Progress, and Done columns, implemented TypeScript types for cross-network state updates, and developed the animated particle background canvas.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Socket.io", "Node.js", "@hello-pangea/dnd"],
+    liveDemo: "https://nex-flow-virid.vercel.app",
+    github: "https://github.com/utkarsh2338/NexFlow",
   },
 ];
 
