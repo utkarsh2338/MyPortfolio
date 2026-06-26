@@ -8,7 +8,7 @@ const SOCIALS = [
   { icon: <FaLinkedin />, href: CONTACT.linkedin, label: "LinkedIn" },
   { icon: <FaGithub />, href: CONTACT.github, label: "GitHub" },
   { icon: <FaXTwitter />, href: CONTACT.twitter, label: "Twitter" },
-  { icon: <FaInstagram />, href: "https://www.instagram.com/utkar_.sh7/", label: "Instagram" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/utkarsh._.147/", label: "Instagram" },
 ];
 
 const Contact = () => {

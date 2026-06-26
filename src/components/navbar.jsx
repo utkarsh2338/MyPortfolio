@@ -17,7 +17,7 @@ const SOCIALS = [
   { icon: <FaLinkedin />, href: CONTACT.linkedin, label: "LinkedIn" },
   { icon: <FaGithub />, href: CONTACT.github, label: "GitHub" },
   { icon: <FaXTwitter />, href: CONTACT.twitter, label: "Twitter" },
-  { icon: <FaInstagram />, href: "https://www.instagram.com/utkar_.sh7/", label: "Instagram" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/utkarsh._.147", label: "Instagram" },
 ];
 
 const Navbar = () => {
@@ -43,9 +43,8 @@ const Navbar = () => {
       className="fixed inset-x-0 top-0 z-50 px-4 pt-4"
     >
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 sm:px-6 ${
-          scrolled ? "glass-strong shadow-lg shadow-black/5" : "border border-transparent"
-        }`}
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 sm:px-6 ${scrolled ? "glass-strong shadow-lg shadow-black/5" : "border border-transparent"
+          }`}
       >
         {/* Logo */}
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="group flex items-center gap-3">
@@ -87,7 +86,7 @@ const Navbar = () => {
             ))}
           </div>
           <a
-            href="/updated_resume_27Jan.pdf"
+            href="/Resume_19_Mach.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/30 sm:block"
