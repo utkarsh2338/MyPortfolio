@@ -1,57 +1,98 @@
-import React from 'react'
-import Navbar from './components/navbar';
-import About from './components/about';
-import Technologies from './components/technologies';
-import Experience from './components/experience';
-import Hero from './components/hero';
-import Projects from './components/projects';
-import Contact from './components/contact';
-import DarkModeToggle from './components/DarkModeToggle';
-import { FaHeart, FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb } from 'react-icons/si';
+import React from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import Navbar from "./components/navbar";
+import Hero from "./components/hero";
+import About from "./components/about";
+import Technologies from "./components/technologies";
+import Experience from "./components/experience";
+import Projects from "./components/projects";
+import Contact from "./components/contact";
+import DarkModeToggle from "./components/DarkModeToggle";
+import { FaHeart, FaReact, FaNodeJs, FaArrowUp } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb } from "react-icons/si";
+
+const Background = () => (
+  <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    {/* base wash */}
+    <div className="absolute inset-0 bg-[#f6f7fb] dark:bg-ink-950" />
+    {/* dot grid */}
+    <div className="absolute inset-0 bg-grid-light bg-[size:26px_26px] opacity-70 dark:bg-grid-dark dark:opacity-100" />
+    {/* aurora blobs */}
+    <div className="aurora-blob left-[-10%] top-[-8%] h-[34rem] w-[34rem] animate-aurora bg-cyan-400/40 dark:bg-cyan-500/30" />
+    <div className="aurora-blob right-[-12%] top-[18%] h-[30rem] w-[30rem] animate-float-slow bg-indigo-400/40 dark:bg-indigo-600/30" />
+    <div className="aurora-blob bottom-[-10%] left-[25%] h-[28rem] w-[28rem] animate-float bg-fuchsia-300/30 dark:bg-fuchsia-600/20" />
+    {/* top fade */}
+    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/60 to-transparent dark:from-ink-950 dark:to-transparent" />
+  </div>
+);
 
 const App = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
-    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
-      <div className="fixed top-0 -z-10 h-full w-full ">
-        <div aria-hidden="true" className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      </div>
-      <div className="container mx-auto px-8">
-        <Navbar />
+    <div className="relative min-h-screen overflow-x-hidden font-sans text-zinc-800 antialiased dark:text-zinc-300">
+      {/* scroll progress */}
+      <motion.div
+        style={{ scaleX }}
+        className="fixed left-0 top-0 z-[60] h-[3px] w-full origin-left bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500"
+      />
+
+      <Background />
+
+      <Navbar />
+
+      <main className="mx-auto max-w-6xl px-5 sm:px-8">
         <Hero />
         <About />
         <Technologies />
         <Experience />
         <Projects />
         <Contact />
+      </main>
 
-        {/* Footer */}
-        <footer className="py-12 text-center border-t border-neutral-800">
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-neutral-400 mb-4">Built with</h3>
-            <div className="flex justify-center gap-4 text-3xl">
-              <FaReact className="text-cyan-400 hover:scale-110 transition-transform" title="React" />
-              <SiTailwindcss className="text-cyan-500 hover:scale-110 transition-transform" title="TailwindCSS" />
-              <FaNodeJs className="text-green-500 hover:scale-110 transition-transform" title="Node.js" />
-              <SiMongodb className="text-green-500 hover:scale-110 transition-transform" title="MongoDB" />
+      {/* Footer */}
+      <footer className="relative mt-16 border-t border-zinc-200 dark:border-white/10">
+        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+          <div className="flex flex-col items-center gap-6 text-center">
+            <div className="flex items-center gap-3 font-mono text-sm text-zinc-500 dark:text-zinc-500">
+              <span className="text-zinc-400 dark:text-zinc-600">built with</span>
+              <FaReact className="text-lg text-cyan-500 transition-transform hover:scale-125" title="React" />
+              <SiTailwindcss className="text-lg text-sky-500 transition-transform hover:scale-125" title="TailwindCSS" />
+              <FaNodeJs className="text-lg text-emerald-500 transition-transform hover:scale-125" title="Node.js" />
+              <SiMongodb className="text-lg text-emerald-500 transition-transform hover:scale-125" title="MongoDB" />
             </div>
-          </div>
-          <p className="text-neutral-500 text-sm flex items-center justify-center gap-2">
-            Made with <FaHeart className="text-red-500" /> by Utkarsh Shukla © {new Date().getFullYear()}
-          </p>
-          <p className="text-xs text-neutral-600 mt-2">
-            All rights reserved. View the{" "}
-            <a href="https://github.com/utkarsh2338" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
-              source code
+            <p className="flex items-center justify-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              Crafted with <FaHeart className="text-rose-500" /> by Utkarsh Shukla
+              <span className="text-zinc-400 dark:text-zinc-600">© {new Date().getFullYear()}</span>
+            </p>
+            <a
+              href="https://github.com/utkarsh2338/MyPortfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-zinc-400 transition-colors hover:text-cyan-500 dark:text-zinc-600 dark:hover:text-cyan-400"
+            >
+              View source code →
             </a>
-          </p>
-        </footer>
+          </div>
+        </div>
+      </footer>
+
+      {/* Floating controls */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button
+          onClick={scrollTop}
+          aria-label="Back to top"
+          className="grid h-12 w-12 place-items-center rounded-full glass text-zinc-700 shadow-lg transition-all hover:-translate-y-1 hover:text-cyan-500 dark:text-zinc-300"
+        >
+          <FaArrowUp />
+        </button>
+        <DarkModeToggle />
       </div>
-
-      {/* Dark Mode Toggle */}
-      <DarkModeToggle />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

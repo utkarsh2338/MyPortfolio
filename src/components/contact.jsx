@@ -1,116 +1,101 @@
-import { CONTACT } from "../constants"
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaLinkedin, FaGithub, FaInstagram, FaArrowRight } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { CONTACT } from "../constants";
+import { SectionHeading } from "./about";
+
+const SOCIALS = [
+  { icon: <FaLinkedin />, href: CONTACT.linkedin, label: "LinkedIn" },
+  { icon: <FaGithub />, href: CONTACT.github, label: "GitHub" },
+  { icon: <FaXTwitter />, href: CONTACT.twitter, label: "Twitter" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/utkar_.sh7/", label: "Instagram" },
+];
 
 const Contact = () => {
   return (
-    <div id="contact" className="border-b border-neutral-900 pb-20">
-      <motion.h2
+    <section id="contact" className="scroll-mt-24 py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
-        className="my-10 text-center text-4xl">Get in Touch</motion.h2>
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6 }}
+      >
+        <SectionHeading eyebrow="// contact" title="Let's build something" />
+      </motion.div>
 
-      <motion.p
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-center text-neutral-400 mb-12 max-w-2xl mx-auto">
-        I'm currently looking for new opportunities and exciting projects. Whether you have a question, collaboration idea, or just want to say hi, feel free to reach out!
-      </motion.p>
+      <div className="relative overflow-hidden rounded-[2rem] glass-strong p-8 sm:p-12">
+        {/* glow accent */}
+        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-indigo-400/20 blur-3xl" />
 
-      <div className="max-w-4xl mx-auto">
-        {/* Contact Info Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="bg-neutral-900/50 rounded-xl p-6 border border-neutral-800 hover:border-purple-500 transition-all">
-            <div className="flex items-center gap-4 mb-3">
-              <FaMapMarkerAlt className="text-purple-500 text-2xl" />
-              <div>
-                <h3 className="text-white font-semibold">Location</h3>
-                <p className="text-neutral-400 text-sm">{CONTACT.address}</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 0.5 }}
-            className="bg-neutral-900/50 rounded-xl p-6 border border-neutral-800 hover:border-purple-500 transition-all">
-            <div className="flex items-center gap-4 mb-3">
-              <FaEnvelope className="text-purple-500 text-2xl" />
-              <div>
-                <h3 className="text-white font-semibold">Email</h3>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="text-neutral-400 text-sm hover:text-purple-400 transition-colors"
-                  aria-label="Send email to Utkarsh Shukla">
-                  {CONTACT.email}
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Social Links */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 30 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center">
-          <h3 className="text-xl font-semibold mb-6 text-white">Connect with me</h3>
-          <div className="flex justify-center gap-6 flex-wrap">
+        <div className="relative grid gap-10 lg:grid-cols-2">
+          {/* Left copy */}
+          <div>
+            <h3 className="font-display text-3xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-4xl">
+              Currently open to <span className="accent-text">internships</span> & exciting projects
+            </h3>
+            <p className="mt-4 max-w-md text-zinc-600 dark:text-zinc-400">
+              Have a question, a collaboration idea, or just want to say hi? My inbox is always open — I'll get back to you as soon as I can.
+            </p>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-all hover:scale-105 shadow-lg"
-              aria-label="Send me an email"
+              className="group mt-7 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-cyan-500/35"
             >
-              <FaEnvelope /> Email Me
+              Say Hello
+              <FaArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
 
-            <a
-              href={CONTACT.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-all hover:scale-105 shadow-lg"
-              aria-label="Visit my LinkedIn profile"
-            >
-              <FaLinkedin /> LinkedIn
-            </a>
-
-            <a
-              href={CONTACT.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-neutral-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-neutral-700 transition-all hover:scale-105 shadow-lg border border-neutral-700"
-              aria-label="Visit my GitHub profile"
-            >
-              <FaGithub /> GitHub
-            </a>
-
-            <a
-              href={CONTACT.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-sky-600 transition-all hover:scale-105 shadow-lg"
-              aria-label="Visit my Twitter profile"
-            >
-              <FaTwitter /> Twitter
-            </a>
+            <div className="mt-8 flex items-center gap-4">
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="grid h-11 w-11 place-items-center rounded-xl glass text-lg text-zinc-600 transition-all hover:-translate-y-1 hover:text-cyan-500 dark:text-zinc-300 dark:hover:text-cyan-400"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Privacy Note */}
-          <p className="text-xs text-neutral-500 mt-8">
-            Note: For privacy reasons, full phone number is available upon request via email.
-          </p>
-        </motion.div>
-      </div>
-    </div>
-  )
-}
+          {/* Right info cards */}
+          <div className="flex flex-col justify-center gap-4">
+            <a
+              href={`mailto:${CONTACT.email}`}
+              className="group flex items-center gap-4 rounded-2xl glass p-5 transition-all hover:border-cyan-400/40"
+            >
+              <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br from-cyan-500/15 to-indigo-500/15 text-xl text-cyan-600 dark:text-cyan-400">
+                <FaEnvelope />
+              </span>
+              <div className="min-w-0">
+                <p className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Email</p>
+                <p className="truncate font-medium text-zinc-900 group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
+                  {CONTACT.email}
+                </p>
+              </div>
+            </a>
 
-export default Contact
+            <div className="flex items-center gap-4 rounded-2xl glass p-5">
+              <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br from-cyan-500/15 to-indigo-500/15 text-xl text-cyan-600 dark:text-cyan-400">
+                <FaMapMarkerAlt />
+              </span>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Location</p>
+                <p className="font-medium text-zinc-900 dark:text-white">{CONTACT.address}</p>
+              </div>
+            </div>
+
+            <p className="px-1 text-xs text-zinc-400 dark:text-zinc-500">
+              For privacy, my phone number is available on request via email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

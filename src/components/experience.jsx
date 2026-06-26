@@ -1,44 +1,67 @@
-import { EXPERIENCES } from "../constants"
 import { motion } from "framer-motion";
+import { EXPERIENCES } from "../constants";
+import { SectionHeading } from "./about";
 
 const Experience = () => {
   return (
-    <section className="border-b border-neutral-900 pb-4">
-        <motion.h2 
-        whileInView={{opacity: 1,y:0}}
-        initial={{opacity: 0,y: -100}}
-        transition={{duration: 0.5}}
-        className="my-20 text-center text-4xl">Experience</motion.h2>
-        <div>
-            {EXPERIENCES.map((experience, index) => (
-                <div key={experience.id || index} className="mb-8 flex flex-wrap lg:justify-center">
-                    <motion.div 
-                    whileInView={{opacity: 1,x:0}}
-                    initial={{opacity: 0,x: -100}}
-                    transition={{duration: 1}}
-                    className="w-full lg:w-1/4">
-                        <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
-                    </motion.div>
-                    <motion.div 
-                    whileInView={{opacity: 1,x:0}}
-                    initial={{opacity: 0,x: 100}}
-                    transition={{duration: 1}}
-                    className="w-full max-w-xl lg:w-3/4">
-                        <h3 className="mb-2 font-semibold">
-                            {experience.role} - <span className="text-sm text-purple-100">
-                                {experience.college}
-                            </span>
-                        </h3>
-                        <p className="mb-4 text-neutral-400">{experience.description}</p>
-                        {experience.technologies.map((tech,index)=>(
-                            <span key={index} className="mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800">{tech}</span>
-                        ))}
-                    </motion.div>
-                </div>
-            ))}
-        </div>
-    </section>
-  )
-}
+    <section id="experience" className="scroll-mt-24 py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6 }}
+      >
+        <SectionHeading eyebrow="// journey" title="Experience & roles" />
+      </motion.div>
 
-export default Experience
+      <div className="relative mx-auto max-w-3xl">
+        {/* vertical line */}
+        <div className="absolute left-4 top-2 h-full w-px bg-gradient-to-b from-cyan-400/60 via-indigo-400/40 to-transparent sm:left-1/2" />
+
+        <div className="space-y-10">
+          {EXPERIENCES.map((exp, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: i * 0.05 }}
+              className={`relative pl-12 sm:w-1/2 sm:pl-0 ${
+                i % 2 === 0 ? "sm:pr-12 sm:text-right" : "sm:ml-auto sm:pl-12"
+              }`}
+            >
+              {/* node */}
+              <span
+                className={`absolute top-2 grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-cyan-400 to-indigo-500 shadow-lg shadow-cyan-500/30 ring-4 ring-white dark:ring-ink-950 left-0 sm:left-auto ${
+                  i % 2 === 0 ? "sm:-right-4" : "sm:-left-4"
+                }`}
+              >
+                <span className="h-2 w-2 rounded-full bg-white" />
+              </span>
+
+              <div className="rounded-2xl glass p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+                <span className="inline-block rounded-full bg-cyan-500/10 px-3 py-1 font-mono text-xs font-medium text-cyan-600 dark:text-cyan-400">
+                  {exp.year}
+                </span>
+                <h3 className="mt-3 font-display text-lg font-semibold text-zinc-900 dark:text-white">
+                  {exp.role}
+                </h3>
+                <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">{exp.college}</p>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {exp.description}
+                </p>
+                <div className={`mt-4 flex flex-wrap gap-2 ${i % 2 === 0 ? "sm:justify-end" : ""}`}>
+                  {exp.technologies.map((t) => (
+                    <span key={t} className="chip">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
