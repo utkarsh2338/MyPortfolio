@@ -143,7 +143,7 @@ const Hero = () => {
               <FaArrowRight className="transition-transform group-hover:translate-x-1" />
             </button>
             <a
-              href="/updated_resume_27Jan.pdf"
+              href="/Resume_19_Mach.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold text-zinc-800 transition-all hover:-translate-y-0.5 hover:text-cyan-600 dark:text-zinc-100 dark:hover:text-cyan-300"

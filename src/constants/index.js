@@ -79,15 +79,15 @@ export const PROJECTS = [
     github: "https://github.com/utkarsh2338/Flipkart_gridlock_round2",
   },
   {
-    title: "Developer Portfolio with CMS",
+    title: "GymRatHub — Premium Fitness & Workout Tracker",
     image: project3,
-    problem: "Developers need modern portfolios with easy content management.",
+    problem: "Athletes struggle with fragmented tools, requiring separate applications for exercise libraries, workout scheduling, macro tracking, and progress analytics.",
     description:
-      "Responsive portfolio website with dark mode, smooth animations, SEO optimization, and custom CMS for managing projects and blog posts without code changes.",
-    contribution: "Designed UI/UX with Framer Motion animations, implemented dark mode toggle, optimized for Lighthouse score 95+.",
-    technologies: ["React", "Next.js", "TailwindCSS", "Framer Motion"],
-    liveDemo: "#",
-    github: "https://github.com/utkarsh2338",
+      "GymRatHub is a premium, all-in-one fitness and workout tracking application designed for modern athletes. It features a gorgeous Neon-Dark glassmorphism theme, a 10,000+ exercise library with YouTube-powered dynamic demos, an interactive drag-and-drop weekly workout planner, a macro/nutrition calculator with meal logs, and responsive SVG progression charts.",
+    contribution: "Architected the Next.js App Router frontend and TypeScript Express backend, implemented responsive glassmorphism UI, integrated drag-and-drop planning with @dnd-kit, built Mongoose ODM schemas, and integrated Google YouTube Data API and Clerk Auth.",
+    technologies: ["Next.js", "Express", "MongoDB", "TypeScript", "Tailwind CSS", "Framer Motion", "@dnd-kit", "Recharts", "Clerk"],
+    liveDemo: "https://gym-rat-hub.vercel.app",
+    github: "https://github.com/utkarsh2338/GymRatHub",
   },
   {
     title: "NexFlow - Real-Time Kanban Board",
